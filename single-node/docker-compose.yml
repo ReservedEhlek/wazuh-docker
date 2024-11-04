@@ -103,6 +103,7 @@ services:
       - wazuh.manager:wazuh.manager
     labels:
       - "traefik.http.routers.wazuh.rule=Host(`wazuh.int.reservedehlek.click`)"
+      - "traefik.http.services.wazuh.loadbalancer.server.port=5601"
 volumes:
   wazuh_api_configuration:
   wazuh_etc:
