@@ -104,6 +104,9 @@ services:
     labels:
       - "traefik.http.routers.wazuh.rule=Host(`wazuh.int.reservedehlek.click`)"
       - "traefik.http.services.wazuh.loadbalancer.server.port=5601"
+      - "traefik.http.services.wazuh.loadbalancer.server.scheme=https"
+      - "traefik.http.services.wazuh.loadbalancer.serverstransport=docker@file"
+
 volumes:
   wazuh_api_configuration:
   wazuh_etc:
